@@ -3,7 +3,6 @@ torch
 matplotlib
 pandas
 scipy
-pytorch
 torchinfo
 torchsummary
 monai
@@ -12,7 +11,7 @@ hdf5storage
 seaborn
 ipywidgets
 yacs
-jinja2
+jinja2 >= 3.0
 ipython
 torchvision
 sklearn
