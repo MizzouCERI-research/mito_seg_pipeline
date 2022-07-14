@@ -2,13 +2,13 @@ FROM ubuntu:latest
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y update && \
  DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential curl git wget python3 python3-pip
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg libsm6 libxext6
-WORKDIR /root
+WORKDIR /
 RUN git clone https://github.com/MizzouCERI-research/mito_seg_pipeline.git
-WORKDIR /root/mito_seg_pipeline/checkpoints
+WORKDIR /mito_seg_pipeline/checkpoints
 RUN wget https://mizzouceri-s3.s3.amazonaws.com/mito_rat.pth
-WORKDIR /root/mito_seg_pipeline
+WORKDIR /mito_seg_pipeline
 RUN pip3 install -r requirements.txt
 RUN pip3 install git+https://github.com/zudi-lin/pytorch_connectomics.git
-RUN cp /root/mito_seg_pipeline/upsampling.py /home/ubuntu/.local/lib/python3.8/site-packages/torch/nn/modules/upsampling.py
+RUN cp /mito_seg_pipeline/upsampling.py /home/ubuntu/.local/lib/python3.8/site-packages/torch/nn/modules/upsampling.py
 ENTRYPOINT ["python3", "mito_demo_inference_small.py"]
 
