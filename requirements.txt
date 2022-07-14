@@ -5,6 +5,7 @@ pandas
 scipy
 torchinfo
 torchsummary
+torchio
 monai
 segmentation-models-pytorch
 hdf5storage
