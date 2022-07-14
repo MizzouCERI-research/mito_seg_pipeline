@@ -16,4 +16,4 @@ jinja2
 ipython
 torchvision
 sklearn
-git+https://github.com/zudi-lin/pytorch_connectomics.git
+# git+https://github.com/zudi-lin/pytorch_connectomics.git
